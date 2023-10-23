@@ -34,3 +34,7 @@ class Score(Turtle):
                 f.write(str(self.score))
         else:
             self.write(f'High Score: {self.highscore}', align='center', font=('Tahoma', 20, 'normal'))
+
+    def print_over(self):
+        self.goto(0, 0)
+        self.write(f'GAME OVER!', align='center', font=('Tahoma', 80, 'normal'))

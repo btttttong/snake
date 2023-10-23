@@ -20,16 +20,20 @@ class Snake:
         return new_snake
 
     def go_up(self):
-        self.head.setheading(90)
+        if self.head.heading() != 270:
+            self.head.setheading(90)
 
     def go_down(self):
-        self.head.setheading(270)
+        if self.head.heading() != 90:
+            self.head.setheading(270)
 
     def go_left(self):
-        self.head.setheading(180)
+        if self.head.heading() != 0:
+            self.head.setheading(180)
 
     def go_right(self):
-        self.head.setheading(0)
+        if self.head.heading() != 180:
+            self.head.setheading(0)
 
     def move(self):
         # self.head.forward(10)

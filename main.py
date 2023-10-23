@@ -29,22 +29,25 @@ while is_game_on:
     score.print_current_score()
     score.print_high_score()
     snake.move()
-    if snake.head.distance(food) < 20:
-        num_of_fruit += 1
-        print('hehehehe')
-        score.add_score()
+    if snake.head.distance(food) < 10:
         food.create_food(num_of_fruit)
         # food.set_ran_position()
+        num_of_fruit += 1
+        print(num_of_fruit)
+        score.add_score()
+
+        print(len(food.fruits))
         snake.append_snake()
         score.print_current_score()
         if snake_speed >= 0.1:
             snake_speed -= 0.001
+
+
     # detect wall
     if snake.head.ycor() < -300 or snake.head.ycor() > 300 or snake.head.xcor() < -300 or snake.head.xcor() > 300:
-        print('game over')
+        score.print_over()
         is_game_on = False
 
-# print game over
 
 # stay on screen
 screen.mainloop()
